@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-import fetch from "node-fetch";
+const fetch = require('node-fetch');
 
 router.get('/', async function(req, res){
     let site = await fetch("https://fallguysstore.com/");
