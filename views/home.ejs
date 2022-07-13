@@ -41,15 +41,40 @@
             <section class="section secondary-color-bg">
                 <div class="body-container menu-background">
                     <div class="centered-container">
-                        <h1 class="decorated-title font-secondary main-color">
-                            Daily items
-                        </h1>
                         <div class="separator"></div>
-                        <div>
-                            <div class="gallery">
-                                <%- daily %> 
-                            </div>
-                        </div>    
+                        <h1 class="skin-category main-color">Featured items</h1>
+                        <div class="gallery">
+                            
+                            <% let i = 0 %> 
+                            <% for(i; i < 4; i++){ %> 
+                            <% if(skins[i].includes(".webp")){ %> 
+                                <a href= <%= skins[i] %>><img class="skin-image" src=<%= skins[i] %>></a> 
+                            <% } else{ %> 
+        
+                            <% if(skins[i].includes(".mp4")){%> 
+                                <video class="emote-video" controls muted>
+                                    <source src= <%= skins[i] %>  type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            <% }}} %> 
+                            <% let last = i %> 
+
+                        </div>
+                        <h1 class="skin-category main-color"> items</h1>
+                        <div class="gallery">
+                            <% for(i; i < last + 3 ; i++){ %> 
+                            <% if(skins[i].includes(".webp")){ %> 
+                                <a href= <%= skins[i] %>><img class="skin-image" src=<%= skins[i] %>></a> 
+                            <% } else{ %> 
+        
+                            <% if(skins[i].includes(".mp4")){%> 
+                                <video class="emote-video" controls muted>
+                                    <source src= <%= skins[i] %>  type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            <% }}} %> 
+                            <% last = i %> 
+                        </div>
                     </div>
                 </div>    
             </section>
